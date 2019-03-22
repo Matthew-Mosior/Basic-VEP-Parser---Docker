@@ -33,7 +33,7 @@ WORKDIR "/home/haskelluser"
 RUN git clone https://github.com/Matthew-Mosior/Basic-VEP-Parser.git 
 
 #Change permissions of bin directory.
-RUN chmod -R 777 /home/haskelluser/Basic-VEP-Parser
+RUN find Basic-VEP-Parser/bin/ -type f -exec chmod 777 {} +
 
 #Add symlink of bvf to bin.
 RUN sudo ln -s /home/haskelluser/Basic-VEP-Parser/bin /bin
