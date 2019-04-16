@@ -30,13 +30,13 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 WORKDIR "/home/haskelluser"
 
 #Git clone the repository to /home/haskelluser.
-RUN git clone https://github.com/Matthew-Mosior/Basic-VEP-Parser.git 
+RUN git clone https://github.com/Matthew-Mosior/Basic-Variant-Parser.git 
 
 #Change permissions of bin directory.
-RUN find Basic-VEP-Parser/bin/ -type f -exec chmod 777 {} +
+RUN find Basic-Variant-Parser/bin/ -type f -exec chmod 777 {} +
 
 #Add symlink of bvf to bin.
-RUN sudo ln -s /home/haskelluser/Basic-VEP-Parser/bin /bin
+RUN sudo ln -s /home/haskelluser/Basic-Variant-Parser/bin /bin
 
 #Add stuff to path.
 RUN export PATH="/opt/ghc/8.6.3/bin/:/usr/local/bin:/usr/bin:/opt/cabal/2.4/bin:/bin"
